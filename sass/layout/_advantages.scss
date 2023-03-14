@@ -68,14 +68,17 @@
         &::before {
             counter-increment: advantages-item;
             content: counter(advantages-item);
-
         }
     }
 
     &__title {
         color: $primary;
-        font-size: rem(28);
+        font-size: fluid(28, 32, small, large);
         line-height: 1.3;
-        margin-bottom: rem(16);
+        margin-bottom: fluid(16, 28, small, large);
+
+        @include up(large) {
+            line-height: 1.2;
+        }
     }
 }

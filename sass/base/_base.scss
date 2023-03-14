@@ -52,7 +52,7 @@ body {
             content: '';
             position: absolute;
             left: 0;
-            bottom: 0;
+            bottom: em(2);
             width: 100%;
             height: rem(3);
             background-color: $accent;
@@ -91,7 +91,7 @@ body {
 
 .button {
     display: inline-block;
-    padding: fluid(12, 16, small, large) fluid(16, 32, small, large);
+    padding: fluid(12, 15, small, large) fluid(16, 32, small, large);
     background-color: $accent;
     color: $primary;
     font-weight: 700;
@@ -99,6 +99,10 @@ body {
     text-decoration: none;
     border: rem(2) solid $accent;
     transition: 0.3s all ease;
+
+    @include up(large) {
+        line-height: 1.78;
+    }
 
     @include on-event() {
         background-color: $primary;

@@ -49,6 +49,11 @@
         font-size: fluid(32, 48, tiny, small);
         line-height: 1.5;
         margin-bottom: fluid(16, 24, tiny, small);
+
+        @include up(small) {
+            font-size: fluid(48, 56, small, large);
+            line-height: 1.14;
+        }
     }
 
     &__text {
