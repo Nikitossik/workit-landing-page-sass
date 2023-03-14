@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Fraunces 144pt';
+    src: url('../assets/fonts/fraunces/Fraunces144pt-SemiBold.eot');
+    src: url('../assets/fonts/fraunces/Fraunces144pt-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/fraunces/Fraunces144pt-SemiBold.woff2') format('woff2'),
+        url('../assets/fonts/fraunces/Fraunces144pt-SemiBold.woff') format('woff'),
+        url('../assets/fonts/fraunces/Fraunces144pt-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../assets/fonts/manrope/Manrope-Regular.eot');
+    src: url('../assets/fonts/manrope/Manrope-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/manrope/Manrope-Regular.woff2') format('woff2'),
+        url('../assets/fonts/manrope/Manrope-Regular.woff') format('woff'),
+        url('../assets/fonts/manrope/Manrope-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../assets/fonts/manrope/Manrope-Bold.eot');
+    src: url('../assets/fonts/manrope/Manrope-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/manrope/Manrope-Bold.woff2') format('woff2'),
+        url('../assets/fonts/manrope/Manrope-Bold.woff') format('woff'),
+        url('../assets/fonts/manrope/Manrope-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

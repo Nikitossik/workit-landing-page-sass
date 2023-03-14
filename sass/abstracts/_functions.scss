@@ -1,0 +1,59 @@
+@use "sass:math";
+@use "sass:map";
+@use "sass:meta";
+
+@use "variables"as *;
+
+// Helps to convert pixels to rem
+
+@function rem($num, $context: 16) {
+
+  @if math.is-unitless($num) {
+    @return #{math.div($num, $context) * 1rem};
+  }
+
+  @else if math.unit($num)=='rem' {
+    @return #{$num};
+  }
+
+  @else {
+    @error "#{$num} value must not contain a unit, please remove the '#{math.unit($num)}' from the number";
+  }
+}
+
+// Helps to convert pixels to em
+
+@function em($num, $context: 16) {
+
+  @if math.is-unitless($num) {
+    @return #{math.div($num, $context) * 1em};
+  }
+
+  @else if math.unit($num)=='em' {
+    @return #{$num};
+  }
+
+  @else {
+    @error "#{$num} value must not contain a unit, please remove the '#{math.unit($num)}' from the number";
+  }
+}
+
+
+// returns clamp expression based on the parameters
+
+@function fluid($min-size, $max-size, $min-breakpoint, $max-breakpoint, $unit: vw) {
+  @if type-of($min-breakpoint)==string {
+    $min-breakpoint: map-get($breakpoints-up, $min-breakpoint);
+  }
+
+  @if type-of($max-breakpoint)==string {
+    $max-breakpoint: map-get($breakpoints-up, $max-breakpoint);
+  }
+
+  $slope: math.div($max-size - $min-size, $max-breakpoint - $min-breakpoint);
+  $slope-to-unit: $slope * 100;
+  $intercept-rem: rem($min-size - $slope * $min-breakpoint);
+  $min-size-rem: rem($min-size);
+  $max-size-rem: rem($max-size);
+  @return clamp(#{$min-size-rem}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{$max-size-rem});
+}

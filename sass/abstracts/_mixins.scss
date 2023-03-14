@@ -1,0 +1,46 @@
+@use "sass:map";
+@use "sass:math";
+@use "variables"as *;
+@use "functions"as *;
+
+@mixin on-event($self: false) {
+  @if $self {
+
+    &,
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-within {
+      @content;
+    }
+  }
+
+  @else {
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-within {
+      @content;
+    }
+  }
+}
+
+@mixin up($size, $custom: false) {
+
+  $point: if($custom, $size, map-get($breakpoints-up, $size));
+  $ems: em($point);
+
+  @media screen and (min-width: #{$ems}) {
+    @content;
+  }
+}
+
+@mixin down($size, $custom: false) {
+  $point: if($custom, $size, map-get($breakpoints-down, $size));
+  $ems: em($point);
+
+  @media screen and (max-width: #{$ems}) {
+    @content;
+  }
+}

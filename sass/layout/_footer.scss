@@ -1,0 +1,24 @@
+@use '../abstracts'as *;
+
+.footer {
+    padding: fluid(74, 80, tiny, small) 0 fluid(64, 120, tiny, small);
+
+    @include up(large) {
+        padding: rem(120) 0 rem(110);
+    }
+
+    &__inner {
+        display: grid;
+        justify-items: center;
+    }
+
+    &__logo {
+        margin-bottom: rem(57);
+    }
+
+    &__social-list {
+        display: flex;
+        column-gap: rem(28);
+        align-items: center;
+    }
+}

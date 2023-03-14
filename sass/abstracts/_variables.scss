@@ -1,0 +1,19 @@
+$primary: #24053E;
+$secondary: #584D62;
+$accent: #44FFA1;
+$section-accent: #FCF8FF;
+
+$ff-primary: 'Fraunces 144pt',
+serif;
+$ff-default:'Manrope',
+sans-serif;
+
+$breakpoints-up: ('tiny': 375, //480px
+  'small': 768,
+  'medium': 1024,
+  'large': 1200);
+
+$breakpoints-down: ('tiny': 374,
+  'small': 767,
+  'medium': 1023,
+  'large': 1199);

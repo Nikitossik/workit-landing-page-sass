@@ -1,0 +1,73 @@
+@use '../abstracts'as *;
+
+.learn-more {
+    text-align: center;
+    background-color: $primary;
+    padding: rem(130) 0 fluid(156, 203, tiny, small);
+    border-radius: 0% 0% 50% 50% / 0% 0% 3% 3%;
+    position: relative;
+    z-index: 2;
+
+    @include up(small) {
+        padding: fluid(120, 146, small, large) 0 fluid(203, 326, small, large);
+        border-radius: 0% 0% 50% 50% / 0% 0% 6% 6%;
+    }
+
+    @include up(large) {
+        border-radius: 0% 0% 50% 50% / 0% 0% 9% 9%;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        color: #fff;
+        font-size: fluid(50, 60, tiny, small);
+        line-height: 1;
+        margin-bottom: rem(40);
+        max-width: 10ch;
+
+        @include up(small) {
+            font-size: fluid(60, 80, small, large);
+        }
+    }
+
+    &__image {
+        position: absolute;
+        bottom: 0;
+        transform: translateY(50%);
+        max-width: fluid(320, 514, tiny, small);
+
+        @include up(small) {
+            max-width: fluid(514, 767, small, large);
+        }
+
+        @include up(large) {
+            transform: translateY(calc(50% - rem(50)));
+        }
+    }
+
+    &__decore-1 {
+        width: rem(270);
+        top: 19%;
+        left: 0;
+        transform: translateX(-68%);
+
+        @include up(large) {
+            width: rem(310);
+            transform: translateX(-46%);
+        }
+    }
+
+    &__decore-2 {
+        width: rem(140);
+        top: 44%;
+        right: 0;
+        transform: translateX(21%);
+
+        @include up(large) {}
+    }
+}

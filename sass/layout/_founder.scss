@@ -1,0 +1,69 @@
+@use '../abstracts'as *;
+
+.founder {
+    padding-top: rem(96);
+
+    @include up(large) {
+        padding-top: rem(110);
+    }
+
+    &__inner {
+        position: relative;
+        display: grid;
+        justify-items: center;
+    }
+
+    &__image {
+        max-width: fluid(280, 477, small, large);
+
+        @include up(small) {
+            justify-self: start;
+        }
+    }
+
+    &__description-box {
+        margin-top: rem(-50);
+        text-align: center;
+        background-color: $primary;
+        color: #fff;
+        position: relative;
+
+        padding: fluid(32, 56, tiny, small) {
+            top: fluid(32, 48, tiny, small);
+        }
+
+        @include up(small) {
+            text-align: left;
+            justify-self: end;
+            max-width: fluid(514, 730, small, large);
+            margin-top: rem(-130);
+        }
+
+        @include up(large) {
+            padding: rem(64);
+            margin-top: rem(-300);
+        }
+    }
+
+    &__title {
+        font-size: fluid(32, 48, tiny, small);
+        line-height: 1.5;
+        margin-bottom: fluid(16, 24, tiny, small);
+    }
+
+    &__text {
+        margin-bottom: rem(24);
+    }
+
+    &__decore {
+        width: rem(173);
+        bottom: 0;
+        right: rem(10);
+        transform: translateY(50%);
+
+        @include up(large) {
+            right: rem(72);
+            transform: translateY(29%);
+        }
+    }
+}
